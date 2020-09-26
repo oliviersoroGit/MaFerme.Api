@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:circleimge="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+             x:Class="MaFerme.AppMobile.MainPage">
+
+    <Shell.TitleView>
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,40,0">
+            <Image Source="safest.png" HorizontalOptions="Center"/>
+
+        </Grid>
+    </Shell.TitleView>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Image
+            Grid.RowSpan="2"
+            Aspect="AspectFill"
+            HorizontalOptions="Fill"
+            Source="globee"
+            VerticalOptions="End"
+            Opacity="0.8"/>
+
+
+
+        <StackLayout Padding="20,5,20,0" Grid.RowSpan="1">
+
+            <!--Header section-->
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout>
+                    <Frame Margin="0,0,10,0"
+                Padding="10"
+                BackgroundColor="Transparent"
+                BorderColor="{StaticResource BorderColor}"
+                CornerRadius="20"
+                HasShadow="False">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                        Margin="10,0,0,0"
+                        HorizontalOptions="Center"
+                        Source="message"
+                        VerticalOptions="Center" />
+
+                            <Label
+                        Grid.Column="1"
+                        Margin="20,0,0,0"
+                        Style="{StaticResource SubTextSemiBold}"
+                        Text="2 Nouvelles reponses" />
+
+                            <Image
+                        Grid.Column="2"
+                        Margin="0,0,10,0"
+                        HorizontalOptions="Center"
+                        Source="Arrow"
+                        VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <circleimge:CircleImage
+                    x:Name="ProfileImge"
+                        Grid.Column="1"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        Source="oli"
+                        VerticalOptions="Center">
+                </circleimge:CircleImage>
+            </Grid>
+
+            <!--Activités-->
+            <Label Style="{StaticResource SubHeader}" Text="Activités" />
+            <Frame CornerRadius="10" HasShadow="False"
+                                     HorizontalOptions="FillAndExpand">
+                <Grid HeightRequest="200">
+
+                    <Image Source="coverlay" Aspect="AspectFill"></Image>
+
+                    <StackLayout Margin="20,30,0,0" InputTransparent="True">
+                        <Label Style="{StaticResource TempLabel}" Text="2 Projets" />
+                        <Label
+                        Margin="0,0,0,0"
+                        Style="{StaticResource SubTextSemiBold}"
+                        Text="8 Demandes en attente"
+                        TextColor="White" />
+                        <Label
+                        Margin="0,0,0,0"
+                        Style="{StaticResource SubTextSemiBold}"
+                        Text="15 demandes ce mois "
+                        TextColor="White" />
+                        <Label
+                        Margin="0,0,0,0"
+                        Style="{StaticResource SubTextSemiBold}"
+                        Text="120 demandes totales"
+                        TextColor="White" />
+                    </StackLayout>
+                    <Label
+                    Margin="0,10,20,0"
+                    HorizontalOptions="End"
+                    Style="{StaticResource SubTextSemiBold}"
+                    Text="◦◦◦"
+                    TextColor="White" />
+                </Grid>
+
+            </Frame>
+
+
+            <!--  Menus  -->
+
+            <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+
+                    <sharpnado:MaterialFrame VerticalOptions="CenterAndExpand"
+                            Margin="10" Padding="20" HasShadow="False" 
+                            Style="{StaticResource AcrylicFrame}" WidthRequest="200">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+
+
+                            <Label
+                        Grid.Column="0"
+                        Margin="0,0,0,0"
+                        Style="{StaticResource ListeTag}"
+                        HorizontalOptions="Start"
+                        Text="Projet de Ferme" />
+
+                            <Frame
+                         Grid.Column="1"
+                                Margin="0"
+                                Padding="10,2,10,2"
+                                BackgroundColor="{StaticResource TagColor}"
+                                CornerRadius="15"
+                                HasShadow="False"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start">
+                                <Label Style="{StaticResource TagLabel}" Text="Ouvrir" />
+                            </Frame>
+
+                        </Grid>
+                    </sharpnado:MaterialFrame>
+
+                    <sharpnado:MaterialFrame VerticalOptions="CenterAndExpand"
+                            Margin="10" Padding="20"
+                                             HasShadow="False"
+                            Style="{StaticResource AcrylicFrame}" WidthRequest="200">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+
+
+                            <Label
+                        Grid.Column="0"
+                        Margin="0,0,0,0"
+                        Style="{StaticResource ListeTag}"
+                        HorizontalOptions="Start"
+                        Text="Plantation hévéa" />
+
+                            <Frame
+                         Grid.Column="1"
+                                Margin="0"
+                                Padding="10,2,10,2"
+                                BackgroundColor="{StaticResource TagColor}"
+                                CornerRadius="15"
+                                HasShadow="False"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start">
+                                <Label Style="{StaticResource TagLabel}" Text="Ouvrir" />
+                            </Frame>
+
+                        </Grid>
+                    </sharpnado:MaterialFrame>
+
+
+
+                </StackLayout>
+            </ScrollView>
+        
+        </StackLayout>
+
+
+        <ImageButton Grid.RowSpan="2"
+                     Source="plus"  
+                     BackgroundColor="Transparent"
+                     HorizontalOptions="EndAndExpand"  
+                     VerticalOptions="End"/>
+
+
+    </Grid>
+
+
+</ContentPage>

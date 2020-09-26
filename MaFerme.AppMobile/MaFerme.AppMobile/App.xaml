@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+             x:Class="MaFerme.AppMobile.App">
+
+    <Application.Resources>
+
+        <!--  Colors  -->
+        <Color x:Key="HeaderColor">#213654</Color>
+        <Color x:Key="ListColor">#000</Color>
+
+        <Color x:Key="AcrylicFrameBackgroundColor">#fff</Color>
+        <Color x:Key="CommonBackgroundColor">#fff</Color>
+
+
+        <Color x:Key="ArrowColor">#768ea0</Color>
+        <Color x:Key="SubTextColor">#95a8b6</Color>
+        <Color x:Key="BorderColor">#d2d7dd</Color>
+        <Color x:Key="TempLabelColor">#ffffff</Color>
+        <Color x:Key="TagColor">#6B4CA8</Color>
+        <Color x:Key="TabSubTextColor">#6B4CA8</Color>
+
+
+        <!--  Fonts  -->
+        <OnPlatform x:Key="TextBold" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Poppins" />
+            <On Platform="Android" Value="Poppins-Bold.ttf#Poppins" />
+        </OnPlatform>
+
+        <OnPlatform x:Key="TextLight" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Poppins Light" />
+            <On Platform="Android" Value="Poppins-Light.ttf#Poppins Light" />
+        </OnPlatform>
+
+        <OnPlatform x:Key="TextSemiBold" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Poppins SemiBold" />
+            <On Platform="Android" Value="Poppins-SemiBold.ttf#Poppins SemiBold" />
+        </OnPlatform>
+
+        <!--  Styles  -->
+        <Style x:Key="Header" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextBold}" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="TextColor" Value="{DynamicResource HeaderColor}" />
+        </Style>
+
+        <Style x:Key="SubText" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextLight}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="#95a8b6" />
+        </Style>
+
+        <Style x:Key="SubTextSemiBold" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextSemiBold}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="{DynamicResource HeaderColor}" />
+        </Style>
+
+        <Style x:Key="SubHeader" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextSemiBold}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+            <Setter Property="TextColor" Value="{DynamicResource HeaderColor}" />
+        </Style>
+
+        <Style x:Key="TempLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextBold}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="{DynamicResource TempLabelColor}" />
+        </Style>
+
+        <Style x:Key="TagLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextBold}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="{DynamicResource TempLabelColor}" />
+        </Style>
+
+        <Style x:Key="TabHeader" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextSemiBold}" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="{DynamicResource TempLabelColor}" />
+        </Style>
+
+        <Style x:Key="ListeTag" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextSemiBold}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="{StaticResource SubTextColor}" />
+        </Style>
+        <Style x:Key="TabSubText" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource TextLight}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="{StaticResource TabSubTextColor}" />
+        </Style>
+
+        <Style x:Key="AcrylicFrame" TargetType="sharpnado:MaterialFrame">
+            <Setter Property="MaterialTheme" Value="Acrylic"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="LightThemeBackgroundColor" Value="{StaticResource AcrylicFrameBackgroundColor}"/>
+        </Style>
+
+
+
+        <!--  Implicit Styles  -->
+        <Style TargetType="Grid">
+            <Setter Property="RowSpacing" Value="0" />
+            <Setter Property="ColumnSpacing" Value="0" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="Padding" Value="0" />
+        </Style>
+
+    </Application.Resources>
+
+</Application>

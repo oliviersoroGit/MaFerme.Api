@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:MaFerme.AppMobile.Views"
+             xmlns:pages="clr-namespace:MaFerme.AppMobile"
+             FlyoutHeaderBehavior="CollapseOnScroll"
+             Shell.ItemTemplate="{StaticResource MenuTemplate}"
+             Shell.MenuItemTemplate="{StaticResource MenuTemplate}"
+             Shell.FlyoutHeaderTemplate="{StaticResource FlyoutHeaderTemplate}"
+             x:Class="MaFerme.AppMobile.AppShell">
+
+
+    <Shell.Resources>
+
+
+        <ResourceDictionary>
+            <Color x:Key="ThemeColor">#6B4CA8</Color>
+            <Color x:Key="HeaderColor">#213654</Color>
+            <Color x:Key="GrayColor">Gray</Color>
+            <Color x:Key="BgColor">#F0F0F0</Color>
+
+            <!--  Fonts  -->
+            <OnPlatform x:Key="TxtBold" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Poppins" />
+                <On Platform="Android" Value="Poppins-Bold.ttf#Poppins" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="TxtLight" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Poppins Light" />
+                <On Platform="Android" Value="Poppins-Light.ttf#Poppins Light" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="TxtSemiBold" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Poppins SemiBold" />
+                <On Platform="Android" Value="Poppins-SemiBold.ttf#Poppins SemiBold" />
+            </OnPlatform>
+
+            <Style x:Key="Header" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource TxtBold}" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="TextColor" Value="{DynamicResource HeaderColor}" />
+            </Style>
+
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource GrayColor}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.BackgroundColor" Value="#fff" />
+                <Setter Property="Shell.ForegroundColor" Value="Black" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
+            <DataTemplate x:Key="MenuTemplate">
+                <StackLayout Orientation="Horizontal">
+                    <Image Margin="30,10,20,10" Source="{Binding Icon}" WidthRequest="22" HeightRequest="22" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="{Binding Title}" TextColor="#686868" FontSize="16" VerticalOptions="Center" FontFamily="{StaticResource TxtSemiBold}"/>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="FlyoutHeaderTemplate">
+                <ContentView BackgroundColor="White" HeightRequest="100"
+                             >
+                    <Image Source="safest"></Image>
+                </ContentView>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <FlyoutItem Title="oliviersoro" Icon="photo.png" >
+        <Tab Title="Accueil" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:MainPage}"/>
+        </Tab>
+        <Tab Title="Parametrage" Icon="settings.png">
+            <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}"/>
+        </Tab>
+
+    </FlyoutItem>
+
+    <MenuItem Text="Accueil" Command="{Binding NavigateCommand}" CommandParameter="photos" IconImageSource="home.png"/>
+    <MenuItem Text="Photos recus" Command="{Binding NavigateCommand}" CommandParameter="projects" IconImageSource="camera.png"/>
+    <MenuItem Text="Demandes envoyés" Command="{Binding SettingsCommand}" CommandParameter="settings" IconImageSource="cursor.png"/>
+    <MenuItem Text="Contacter nous" Command="{Binding SettingsCommand}" CommandParameter="settings" IconImageSource="contact.png"/>
+
+
+</Shell>
